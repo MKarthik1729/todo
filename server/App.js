@@ -2,17 +2,15 @@ const express = require('express')
 const BodyParser = require("body-parser");
 const cors = require('cors')
 const mongoose = require("mongoose");
-// const Database = require('./connections/MongoDB')
-
-
+const morgan = require("morgan");
+const rfs = require("rotating-file-stream");
+const path = require('path')
 const Trail = require('./Schemas/trailschema')
 const NewUser = require('./Schemas/UserSchemas')
 mongoose.connect(
-    // `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
     'mongodb+srv://karthik:12345677@cluster0.qttfhba.mongodb.net/?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
-    //   useFindAndModify: false,
       useUnifiedTopology: true
     }
   );
@@ -26,6 +24,11 @@ mongoose.connect(
 
 const app = express()
 const PORT = 4000
+const logStream = rfs.createStream("storage.log", {
+    interval: "1d",
+    path: path.join(__dirname, "logs"),
+  });
+app.use(morgan("combined", { stream: logStream, immediate: true}));
 
 app.use(
 	cors({

@@ -30,9 +30,8 @@ function App() {
   return (
     <div>
       <div>
-        {/* <OptLogin/> */}
         {(Logged_In) ?
-          <>
+          <div className='flexer'>
             <p
               onClick={() => setLoader(2)}
             >
@@ -47,15 +46,15 @@ function App() {
                 setLogged_In(false)
               }}
             >Logout</p>
-          </> :
-          <>
+          </div> :
+          <div className='flexer'>
             <p
               onClick={() => setLoader(0)}
             >LogIn</p>
             <p
               onClick={() => setLoader(1)}
             >Register</p>
-          </>}
+          </div>}
         {/* <h4>Section for Navbar !!!!!</h4> */}
         <Path />
       </div>
