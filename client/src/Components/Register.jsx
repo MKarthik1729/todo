@@ -26,7 +26,7 @@ function Register({ setLogged_In, setLoader, setUser}) {
     
     // console.log(RegJson)       
     setLogged_In(true)
-    setLoader(3)
+    setLoader(0)
   }
   else{
     alert('password not same')

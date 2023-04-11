@@ -8,8 +8,8 @@ function NewTodo({ user, setLoader,setUser}) {
 
     const checker = (arr) => {
       // console.log(arr,arr.length)
+
       for (var x=0; x < arr.length; x++) {
-        // console.log(x)
         if (arr[x].title === title.current.value) {
           return false
         }

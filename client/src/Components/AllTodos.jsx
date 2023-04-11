@@ -13,6 +13,8 @@ function AllTodos({todoTask}) {
 
   
 
+  
+
   return <div className='card'>
     <h4 style={{paddingLeft:'20px'}}>AllTodos</h4><hr />
     {todoTask && todoTask.map(ele=>{
