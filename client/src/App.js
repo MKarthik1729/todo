@@ -18,7 +18,7 @@ function App() {
       case 0:
         return <Login setLogged_In={setLogged_In} setLoader={setLoader} setUser={setUser}/>
       case 1:
-        return <div className='flex'><Register setLogged_In={setLogged_In} setLoader={setLoader}  /><Img/></div>
+        return <div className='flex'><Register setLogged_In={setLogged_In} setLoader={setLoader} setUser={setUser} /><Img/></div>
       case 2:
         return <AllTodos todoTask={user.todo}/>
       case 3:

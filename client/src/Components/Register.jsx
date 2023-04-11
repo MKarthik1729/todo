@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import axios from 'axios'
 
 
-function Register({ setLogged_In, setLoader }) {
+function Register({ setLogged_In, setLoader, setUser}) {
   const UserName = useRef()
   const Email = useRef()
   const Pass = useRef()
@@ -17,14 +17,16 @@ function Register({ setLogged_In, setLoader }) {
     }
     axios.post('http://localhost:4000/register', RegJson)
     .then(function (response) {
-      console.log(response);
+      console.log('res',response.data);
+      setUser(response.data)
     })
     .catch(function (error) {
       console.log(error);
     });
-    console.log(RegJson)       
+    
+    // console.log(RegJson)       
     setLogged_In(true)
-    setLoader(2)
+    setLoader(3)
   }
   else{
     alert('password not same')
