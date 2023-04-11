@@ -31,31 +31,31 @@ function Register({ setLogged_In, setLoader }) {
   }
 }
   return (
-    <div>
+    <div className='card'>
         <label>
         UserName  :
         <input type='text'
         ref={UserName}
          placeholder='UserName' />
-      </label><br />
+      </label><br /><br />
       <label>
         Email  :
         <input 
         ref={Email}
         type='Email' placeholder='Email' />
-      </label><br />
+      </label><br /><br />
       <label>
         Password  :
         <input 
         ref={Pass}
         type='password' placeholder='Password' />
-      </label><br />
+      </label><br /><br />
       <label>
         Confirm Password  :
         <input 
         ref={ConPass}
         type='password' placeholder='Confirm Password' />
-      </label><br />
+      </label><br /><br />
       <button
         onClick={Registering}
         type='submit'>

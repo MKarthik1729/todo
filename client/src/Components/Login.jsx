@@ -34,19 +34,19 @@ function Login({setLogged_In,setLoader,setUser}) {
   }
 
   return (
-    <div>
+    <div className='card'>
       <label>
         Email  :
         <input type='email'
         ref={Email}
         placeholder='Email' /> 
-      </label><br/>
+      </label><br/><br/>
       <label>
         Password  :
         <input type='password' 
         ref={Pass}
         placeholder='Password' />
-      </label><br />
+      </label><br /><br/>
       <button
       onClick={onSubmit}
       type='submit'>

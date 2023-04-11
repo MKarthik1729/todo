@@ -5,6 +5,10 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const rfs = require("rotating-file-stream");
 const path = require('path')
+const helmet = require('helmet')
+
+
+
 const Trail = require('./Schemas/trailschema')
 const NewUser = require('./Schemas/UserSchemas')
 mongoose.connect(
@@ -29,14 +33,12 @@ const logStream = rfs.createStream("storage.log", {
     path: path.join(__dirname, "logs"),
   });
 app.use(morgan("combined", { stream: logStream, immediate: true}));
-
+app.use(helmet())
 app.use(
 	cors({
 		origin: ["http://localhost:3000"],
 	})
 );
-
-// app.use(cors(corsOptions))
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: false }));
 
@@ -76,10 +78,6 @@ app.post('/addtask',async(req,res)=>{
 })
 
 app.post('/changeStatus',async(req,res)=>{
-
-    // const filter = { user: req.body.user, todo: { $elemMatch: { title : req.body.title } } }
-
-    // const result = await NewUser.updateOne(filter, update);
     const result = await NewUser.aggregate([
         {$match: {user: req.body.user}},
         {$unwind: "$todo"},
@@ -98,14 +96,12 @@ app.post('/alltasks',async(req,res)=>{
     const result = await NewUser.findOne({
         user:req.body.user
     })
-    .catch(err=>console.log(err))
-    // console.log(result.todo)
+    .catch(err=>console.log(err))   
     res.send(result.todo)
 })
 
 
 app.post('/trail',(req,res)=>{
-    // Database();
     console.log(req.body);
     const Product = new Trail(req.body)
     Product.save()

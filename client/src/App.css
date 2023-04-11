@@ -5,6 +5,50 @@
 .flexer{
   display: flex;
   gap: 20px;
+  /* background-color: aqua; */
+  justify-content: center;
+}
+.flex{
+  display: flex;
+  /* gap: 20px; */
+  /* background-color: aqua; */
+  /* justify-content: center; */
+}
+
+
+.textsupp{
+  font-weight: bold;
+  background-color: rgb(240, 255, 106);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card{
+  width: 200px;
+  /* height: 200px; */
+  margin-left: 200px;
+  padding: 30px;
+  justify-content: center;
+  background-color: aliceblue;
+}
+.cardx{
+  /* width: 200px; */
+  /* height: 200px; */
+  /* margin-left: 200px; */
+  padding: 30px;
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+.circle{
+  border: 1px solid rgb(44, 44, 44);
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+}
+
+.textsupp:hover{
+  border: 1px solid black;
 }
 
 .App-logo {

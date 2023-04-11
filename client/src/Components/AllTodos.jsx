@@ -13,15 +13,16 @@ function AllTodos({todoTask}) {
 
   
 
-  return (<>
-    <div>AllTodos</div>
+  return <div className='card'>
+    <h4 style={{paddingLeft:'20px'}}>AllTodos</h4><hr />
     {todoTask && todoTask.map(ele=>{
       return<div key={ele.title}>      
       <h5>{ele.title}</h5>
-      <p>{ele.description}</p>
+      <p>{ele.description}</p><hr />
       </div>
     })}
-    </>)
+    </div>
+
 }
 
 export default AllTodos

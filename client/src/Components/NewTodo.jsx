@@ -47,17 +47,18 @@ function NewTodo({ user, setLoader,setUser}) {
     }
   }
   return (
-    <div>NewTodo
+    <div  className='card'>
+      <h5>NewTodo</h5>
       <label> Title  :
         <input type='text'
           ref={title}
           placeholder='title' />
-      </label>
+      </label><br /><br />
       <label> Description  :
         <input type='text'
           ref={des}
           placeholder='title' />
-      </label>
+      </label><br /><br /> 
       <button onClick={onSubmit}>add</button>
     </div>
   )
