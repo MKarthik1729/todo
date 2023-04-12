@@ -25,7 +25,7 @@ function Register({ setLogged_In, setLoader, setUser}) {
     });
     
     // console.log(RegJson)       
-    setLogged_In(true)
+    // setLogged_In(true)
     setLoader(0)
   }
   else{
