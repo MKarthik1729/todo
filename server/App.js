@@ -33,7 +33,7 @@ app.use(morgan("combined", { stream: logStream, immediate: true}));
 app.use(helmet())
 app.use(
 	cors({
-		origin: ["http://localhost:3000"],
+		origin: ["http://localhost:3000","http://localhost:3001"],
 	})
 );
 app.use(BodyParser.json());
